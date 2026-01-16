@@ -1,3 +1,121 @@
 <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SiCatat Hutang</title>
+  <meta name="description" content="Catat dan kelola hutang piutang secara sederhana dan offline." />
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#111111;
+      --card:#f3f4f6;
+      --accent:#16a34a;
+    }
+    [data-theme="dark"]{
+      --bg:#020617;
+      --fg:#e5e7eb;
+      --card:#020617;
+      --accent:#22c55e;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--fg);
+      line-height:1.6;
+    }
+    header{
+      padding:48px 16px;
+      background:linear-gradient(135deg,var(--accent),#0ea5e9);
+      color:#fff;
+      text-align:center;
+    }
+    header h1{margin:0 0 8px;font-size:2.2rem}
+    header p{margin:0;opacity:.95}
+    main{max-width:960px;margin:auto;padding:24px 16px}
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:20px;
+      margin-bottom:20px;
+    }
+    h2{margin-top:0}
+    ul{padding-left:20px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    button{
+      border:none;
+      border-radius:8px;
+      padding:10px 14px;
+      font-size:14px;
+      cursor:pointer;
+    }
+    .primary{background:var(--accent);color:white}
+    .ghost{background:transparent;color:var(--fg);border:1px solid rgba(0,0,0,.15)}
+    footer{
+      text-align:center;
+      padding:24px 16px;
+      font-size:14px;
+      opacity:.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SiCatat Hutang</h1>
+    <p>Catat dan kelola hutang piutang secara sederhana dan offline.</p>
+  </header>
 
-<html></html>
+  <main>
+    <div class="card">
+      <h2>Tentang Aplikasi</h2>
+      <p>
+        SiCatat Hutang adalah aplikasi sederhana untuk membantu Anda mencatat dan mengelola hutang serta piutang secara rapi. Aplikasi ini dirancang untuk penggunaan pribadi maupun usaha kecil yang ingin memantau catatan keuangan secara praktis tanpa koneksi internet.
+      </p>
+      <p>
+        Dengan SiCatat Hutang, Anda dapat menyimpan data hutang dan piutang langsung di perangkat Anda, sehingga catatan tetap tersedia kapan saja dan tidak bergantung pada server atau akun online.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Fitur Utama</h2>
+      <ul>
+        <li>Mencatat hutang dan piutang secara terpisah</li>
+        <li>Menyimpan nama, nominal, tanggal, dan status pembayaran</li>
+        <li>Menandai catatan sebagai lunas atau belum lunas</li>
+        <li>Mengedit dan menghapus catatan</li>
+        <li>Menampilkan daftar berdasarkan tanggal dan status</li>
+        <li>Mode tema terang dan gelap</li>
+        <li>Data tersimpan secara lokal di perangkat</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Penggunaan</h2>
+      <p>
+        Aplikasi ini cocok digunakan untuk kebutuhan pribadi, keluarga, atau usaha kecil yang ingin mencatat transaksi hutang dan piutang secara lebih teratur.
+      </p>
+      <p>
+        SiCatat Hutang tidak memerlukan login, tidak menggunakan akun, dan tidak mengirim data ke server. Semua data disimpan dan dikelola langsung di perangkat Anda.
+      </p>
+    </div>
+
+    <div class="actions">
+      <button class="primary" onclick="toggleTheme()">Ganti Mode Terang/Gelap</button>
+      <button class="ghost" onclick="alert('Halaman kebijakan privasi belum ditambahkan')">Kebijakan Privasi</button>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 SiCatat Hutang
+  </footer>
+
+  <script>
+    function toggleTheme(){
+      const html=document.documentElement;
+      html.dataset.theme=html.dataset.theme==='dark'?'light':'dark';
+    }
+  </script>
+</body>
+</html>
